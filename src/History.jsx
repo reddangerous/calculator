@@ -1,11 +1,13 @@
 import React from 'react';
 
-const History = ({ history }) => {
+const History = ({ history,output }) => {
   return (
-    <div className='history'>
-      {history.map((calculation, index) => (
-        <div key={index}>{calculation}</div>
-      ))}
+  <div className="history">
+        {history.map((entry, index) => (
+          <div key={index}>{entry}
+          </div>
+        ))}
+         {/* <div className="output">{output}</div> */}
     </div>
   );
 };

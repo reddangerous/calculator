@@ -12,33 +12,51 @@
   font-size: calc(10px + 2vmin);
   color: #000000;
   height:50px;
-  border: 5px solid #61dafb; 
+  border: 1.5px solid #61dafb; 
   
 }
 
-header ul li {
-  display: inline-block;
-  margin: 0 10px;
-  list-style: none;
+header h1 {
+color: #000000;
+font-size: 50px;
+font-weight: bold;
 
 }
-header a{
-  text-decoration: none;
-  color: #000000;
-  font-size: 20px;
-  font-weight: bold;
-}
+
 
 .history{
   display: flex;
   flex-direction: row;
   font-size: calc(10px + 2vmin);
-  color: #000000;
+  color: #fff;
+  background-color: #000000;
   height:50px;
-  border: 5px solid #61dafb;
+  border: 1.5px solid #61dafb;
   height: 100px; 
+  font-weight: 700;
   
 }
+ .output{
+  position: fixed;
+  margin-left: 1290px;
+  margin-top: 60px;
+}
+@media  (max-width: 600px) {
+  .output{
+    position: fixed;
+    margin-left: 320px;
+    margin-top: 60px;
+  }
+}
+  @media  (max-width: 900px) {
+  .output{
+    position: fixed;
+    margin-left: 600px;
+    margin-top: 60px;
+  }
+}
+  
+
 .body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -52,4 +70,29 @@ header a{
   background-color: transparent;
   box-shadow: none;
 
+}
+.body button:hover{
+  background-color: #61dafb;
+  color: #000000;
+  box-shadow: none;
+}
+footer{
+margin-top: 300px;
+  position: end;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #61dafb;
+  color: #fff;
+  font-weight: 700;
+
+}
+
+footer a{
+  color: #61dafb;
+  font-weight: bold;
+  text-decoration: none;
 }

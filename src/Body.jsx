@@ -1,46 +1,21 @@
 import BackspaceIcon from '@mui/icons-material/Backspace';
-import  {useState} from 'react';
 import React from 'react';
 
-const Body = ({onClear, onInput , onDelete, onEquals}) => {
-  const [input, setInput] = useState('');
-
+const Body = ({handleClear, handleInput , handleDelete, handleEquals}) => {
+const [input] = React.useState([]);
   const handleButtonClick = (value) => {
-    onInput(input + value);
+    handleInput(value);
   };
 
-  const handleClear = () => {
-    onClear('');
+ 
+  const handleButtonClickPercentage = () => {
+    handleInput('%');
   };
-
-  const handleDelete = () => {
-    onDelete(input.slice(0, -1));
-  };
-
- const handleEquals = () => {
-  try {
-    let result = input;
-    result = result.replace(/x/g, '*');
-    if (result.includes('%')) {
-      const percentageValue = parseFloat(result.replace(/%/g, ''));
-      result = (percentageValue / 100).toString();
-    }
-    result = eval(result).toString();
-
-    setInput(result); // Update the input with the result
-    onInput(result); // Update the history with the result
-  } catch (error) {
-    // Handle any error that occurs during evaluation
-    setInput('Error');
-    //onInput('Error');
-  }
-};
-
   return (
     <div className='body'>
       <button className='clear' onClick={handleClear}>C</button>
       <button className='delete' onClick={handleDelete}><BackspaceIcon/></button>
-      <button className='percent' onClick={() => handleButtonClick('%')}>%</button>
+      <button className='percent' onClick={handleButtonClickPercentage}>%</button>
       <button className='divide' onClick={() => handleButtonClick('÷')}>÷</button>
       <button className='seven' onClick={() => handleButtonClick('7')}>7</button>
       <button className='eight' onClick={() => handleButtonClick('8')}>8</button>

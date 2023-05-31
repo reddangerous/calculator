@@ -1,9 +1,7 @@
 
 import './App.css';
 import Header from './Header';
-import History from './History';
-import Body from './Body';
-import { Calculate } from '@mui/icons-material';
+import Footer from './Footer';
 import Calculator from './Calculator';
 function App({history}) {
   return (
@@ -11,7 +9,8 @@ function App({history}) {
     <Header/>
    
     {/* <Body/> */}
-    <Calculator/> 
+    <Calculator/>
+    <Footer/> 
     </div>
   );
 }
